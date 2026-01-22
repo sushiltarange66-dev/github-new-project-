@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <link rel="stylesheet" href="ContactForm.css">
+</head>
+<body>
+    <div class="container">
+        <form method="get">
+        <h1 class="Action">Contact Us</h1>
+
+        <p>
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+        </p>
+        <p>
+            <input type="email" name="email" id="emali" placeholder="Your Email" required>
+        </p>
+        <p>
+            <input type="number" name="phone Number" id="phone number" placeholder="Phone Number" required>
+        </p>
+        <p>
+            <textarea name="address" placeholder="Your Message" required></textarea>
+        </p>
+
+        <input type="Submit" value="Submit">
+        </form>
+    </div>
+    
+</body>
+</html>
+
+<----------------------------------------------------------------------CSS---------------------------------------------------------->
+
+*{
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(210, 198, 198);
+    margin-top: 62px;
+    font-size: 18px;
+    border-radius: 4px;
+    background: linear-gradient(135deg,
+      rgb(60, 90, 220),
+      rgb(130, 70, 200),
+      rgb(220, 70, 160)
+    );
+}
+.container{
+  background-color: white;
+  margin: 40px auto;
+  padding: 32px;
+  width: 360px;
+  border-radius: 16px;
+  
+}
+.Action{
+    font-size: 40px;
+    text-align: center;
+    color: rgb(9, 9, 139);
+    width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+input[type="submit"]{
+  background: linear-gradient(90deg,
+    rgb(236, 72, 153),
+    rgb(249, 115, 22),
+    rgb(251, 146, 60)
+  );
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+
+input[type=submit]:hover{
+    background-color: #4c4c4c;
+}
