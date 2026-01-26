@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>26 January Blast</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    overflow:hidden;
+    font-family:Verdana;
+    text-align:center;
+    color:white;
+}
+
+/* Button */
+button{
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:20px 45px;
+    font-size:24px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(orange,white,green);
+    font-weight:bold;
+    cursor:pointer;
+    z-index:10;
+}
+
+/* Chakra */
+.chakra{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:120px;
+    height:120px;
+    border:5px solid navy;
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    animation:spin 2s linear infinite;
+    display:none;
+}
+.chakra span{
+    position:absolute;
+    width:2px;
+    height:55px;
+    background:navy;
+    top:5px;
+    left:50%;
+    transform-origin:bottom;
+}
+
+@keyframes spin{
+    from{transform:translate(-50%,-50%) rotate(0deg);}
+    to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+/* Rain bars */
+.bar{
+    position:absolute;
+    width:8px;
+    height:40px;
+    top:-50px;
+    animation:fall linear infinite;
+}
+@keyframes fall{
+    to{transform:translateY(110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="blast()">🇮🇳 CLICK FOR BLAST 🇮🇳</button>
+
+<div class="chakra" id="chakra"></div>
+
+<script>
+// create chakra spokes
+const chakra=document.getElementById("chakra");
+for(let i=0;i<24;i++){
+    let s=document.createElement("span");
+    s.style.transform=`rotate(${i*15}deg)`;
+    chakra.appendChild(s);
+}
+
+function blast(){
+    document.querySelector("button").style.display="none";
+    chakra.style.display="block";
+
+    // tricolor rain
+    setInterval(()=>{
+        let b=document.createElement("div");
+        b.className="bar";
+        let colors=["#ff9933","white","#138808"];
+        b.style.background=colors[Math.floor(Math.random()*3)];
+        b.style.left=Math.random()*window.innerWidth+"px";
+        b.style.animationDuration=(1+Math.random()*2)+"s";
+        document.body.appendChild(b);
+        setTimeout(()=>b.remove(),3000);
+    },80);
+}
+</script>
+
+</body>
+</html>
